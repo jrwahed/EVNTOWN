@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 7.8%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 7.8%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 16 100% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 55%;
+
+    --accent: 16 100% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 16 100% 60% / 0.15;
+    --input: 0 0% 16%;
+    --ring: 16 100% 60%;
+
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .text-subtle {
+    color: rgba(255, 255, 255, 0.55);
+  }
+
+  .bg-grid {
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .glass-nav {
+    background: rgba(10, 10, 10, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .glass-card {
+    background: #141414;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 102, 52, 0.15);
+    transition: all 0.3s ease;
+  }
+
+  .glass-card:hover {
+    border-color: rgba(255, 102, 52, 0.6);
+    box-shadow: 0 0 30px -5px rgba(255, 102, 52, 0.2), 0 0 60px -10px rgba(255, 102, 52, 0.1);
+    transform: scale(1.04);
+  }
+
+  .card-glow-border {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-glow-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, hsl(16 100% 60%), transparent);
+  }
+
+  .btn-glow {
+    transition: all 0.3s ease;
+  }
+
+  .btn-glow:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px -5px rgba(255, 102, 52, 0.5);
+  }
+
+  .hero-glow {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 102, 52, 0.2) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+}
