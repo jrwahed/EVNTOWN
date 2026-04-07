@@ -14,11 +14,11 @@ const AppleIcon = () => (
 );
 
 const HeroSection = () => (
-  <section className="relative min-h-screen flex items-center justify-center bg-grid overflow-hidden">
+  <section className="relative min-h-screen flex items-center justify-center bg-grid overflow-x-clip">
     {/* Orange glow orb */}
     <div className="hero-glow" />
 
-    <div className="relative z-10 mx-auto max-w-content px-6 text-center pt-24 pb-20">
+    <div className="relative z-10 w-full mx-auto max-w-4xl px-6 text-center pt-24 pb-20">
       {/* Badge */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -59,7 +59,7 @@ const HeroSection = () => (
         initial={{ opacity: 0, y: 25 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="max-w-[600px] mx-auto mb-12 whitespace-nowrap"
+        className="max-w-[600px] mx-auto mb-12"
         style={{ fontSize: "18px", fontWeight: 400, color: "rgba(255,255,255,0.65)", lineHeight: 1.8, marginTop: "24px" }}
       >
         كل الـEvents اللي حواليك في مكان واحد — اختار حسب مودك واحجز بسهولة
